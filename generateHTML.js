@@ -218,3 +218,4 @@ const colors = {
       </html>`
   }
   
+  module.exports = {generateHTML};

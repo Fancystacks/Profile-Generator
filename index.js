@@ -51,18 +51,19 @@ function init() {
                         .get(`https://api.github.com/users/${username}/repos?per_page=100`)
                         .then((response) => {
                             data.stars = 0;
-                            for (let i = 0; i < response.data.length; i++) {
+                            for (var i = 0; i < response.data.length; i++) {
                                 data.stars += res.data[i].stargazers_count;
                             }
                             let resumeHTML = generateHTML(data);
-                            conversion({ html: resumeHTML }, function (err, result) {
+                            pdf.create({ html: resumeHTML }).toFile('github.pdf', function (err, res) {
                                 if (err) {
                                     return console.error(err);
                                 }
-                                console.log(result.numberOfPages);
-                                console.log(result.logs);
-                                result.stream.pipe(fs.createWriteStream('github.pdf'));
-                                conversion.kill();
+
+                                pdf.create({ html: resumeHTML }).toStream(function (err, stream) {
+                                    stream.pipe(fs.createWriteStream('github.pdf'));
+                                });
+
                             })
                         })
                 });
