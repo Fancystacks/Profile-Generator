@@ -1,7 +1,8 @@
 const fs = require("fs");
 const axios = require('axios');
 const inquirer = require('inquirer');
-const { generateHTML } = require("./generateHTML.js")
+const pdf = require('html-pdf');
+const { generateHTML } = require("./generateHTML")
 
 const questions = [
     {
