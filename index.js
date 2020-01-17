@@ -7,12 +7,12 @@ const questions = [
     {
         type: "input"
         , name: "username"
-        , message: "Enter your GitHub username"
+        , message: "Please enter your GitHub username"
     },
     {
         type: "list"
         , name: "color"
-        , message: "Which color do you want as the background?"
+        , message: "Which color would you like as the background?"
         , choices: [
             "green"
             , "blue"
@@ -210,33 +210,33 @@ inquirer
                                     </div>
                                 </div>
                             </div>
-                            <div class="main pt-5 pb-1 px-3 mb-0">
+                            <div class="main">
                                 <div>
                                     <h4 style="text-align: center;">${bio}</h4>
                                 </div>
-                                <div class="row mt-4">
-                                    <div class="col-6">
-                                        <div class="card m-0">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card">
                                             <h4 class="mb-2">Public Respositories</h4>
                                             <h6>${public_repos}</h6>
                                         </div>
                                     </div>    
-                                    <div class="col-6">
-                                        <div class="card m-0">
+                                    <div class="col-4">
+                                        <div class="card">
                                             <h4 class="mb-2">Followers</h4>
                                             <h6>${followers}</h6>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mt-4 mb-5">
-                                    <div class="col-6">
-                                        <div class="card m-0">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="card">
                                             <h4 class="mb-2">GitHub Stars</h4>
                                             <h6>${public_gists}</h6>
                                         </div>
                                     </div>    
-                                    <div class="col-6">
-                                        <div class="card m-0">
+                                    <div class="col-4">
+                                        <div class="card">
                                             <h4 class="mb-2">Following</h4>
                                             <h6>${following}</h6>
                                         </div>
