@@ -2,6 +2,9 @@ const fs = require("fs");
 const axios = require('axios');
 const inquirer = require('inquirer');
 const pdf = require('html-pdf');
+const util = require("util");
+
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const questions = [
     {
@@ -191,21 +194,21 @@ inquirer
                         <div class="container">
                             <div class="wrapper">
                                 <div class="photo-header">
-                                    <img src="${avatar_url}">
+                                    <img src="${data.avatar_url}">
                                     <h1>Hi!</h1>
-                                    <h2>My name is ${name}</h2>
+                                    <h2>My name is ${data.name}</h2>
                                     <div class="my-3 text-center">
-                                        <h6>Currently at ${company}</h6>
+                                        <h6>Currently at ${data.company}</h6>
                                     </div>
                                     <div class="row mb-2">
                                         <div class="col text-right">
-                                            <a href="http://maps.google.com/maps?q=${location.split(' ').join('+')}"><i class="fas fa-location-arrow"></i>${location}</a>
+                                            <a href="http://maps.google.com/maps?q=${data.location.split(' ').join('+')}"><i class="fas fa-location-arrow"></i>${location}</a>
                                         </div>
                                         <div class="col text-center">
-                                            <a href="${html_url}"><i class="fab fa-github"></i> GitHub</a>
+                                            <a href="${data.html_url}"><i class="fab fa-github"></i> GitHub</a>
                                         </div>
                                         <div class="col text-left">
-                                            <a href="${blog}"><i class="fas fa-paperclip"></i>Blog</a>
+                                            <a href="${data.blog}"><i class="fas fa-paperclip"></i>Blog</a>
                                             </div>
                                             </div>
                                         </div>
@@ -218,13 +221,13 @@ inquirer
                                             <div class="col-6">
                                                 <div class="card m-0">
                                                     <h4 class="mb-2">Public Respositories <i class="far fa-sticky-note"></i></h4>
-                                                    <h6>${public_repos}</h6>
+                                                    <h6>${data.public_repos}</h6>
                                                 </div>
                                             </div>    
                                             <div class="col-6">
                                                 <div class="card m-0">
                                                     <h4 class="mb-2">Followers <i class="fas fa-user-friends"></i></h4>
-                                                    <h6>${followers}</h6>
+                                                    <h6>${data.followers}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,13 +235,13 @@ inquirer
                                             <div class="col-6">
                                                 <div class="card m-0">
                                                     <h4 class="mb-2">GitHub Stars <i class="far fa-star"></i></h4>
-                                                    <h6>${public_gists}</h6>
+                                                    <h6>${data.public_gists}</h6>
                                                 </div>
                                             </div>    
                                             <div class="col-6">
                                                 <div class="card m-0">
                                                     <h4 class="mb-2">Following <i class="fas fa-user-friends"></i></h4>
-                                                    <h6>${following}</h6>
+                                                    <h6>${data.following}</h6>
                                                 </div>
                                             </div>
                                         </div>
