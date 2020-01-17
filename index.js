@@ -215,29 +215,29 @@ inquirer
                                     <h4 style="text-align: center;">${bio}</h4>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="card">
-                                            <h4 class="mb-2">Public Respositories</h4>
+                                            <h4>Public Respositories</h4>
                                             <h6>${public_repos}</h6>
                                         </div>
                                     </div>    
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="card">
-                                            <h4 class="mb-2">Followers</h4>
+                                            <h4>Followers</h4>
                                             <h6>${followers}</h6>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="card">
-                                            <h4 class="mb-2">GitHub Stars</h4>
+                                            <h4>GitHub Stars</h4>
                                             <h6>${public_gists}</h6>
                                         </div>
                                     </div>    
-                                    <div class="col-4">
+                                    <div class="col-6">
                                         <div class="card">
-                                            <h4 class="mb-2">Following</h4>
+                                            <h4">Following</h4>
                                             <h6>${following}</h6>
                                         </div>
                                     </div>
@@ -256,7 +256,6 @@ inquirer
                 pdf.create(html, options).toFile(`./html-pdf/${login}.pdf`, function(err, res) {
                     if (err) return console.log(err);
                     console.log('EUREKA!');
-                    console.log(response);
                 });
 
             });
