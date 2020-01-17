@@ -35,20 +35,20 @@ inquirer
                 photoBorderColor: "#black"
             },
             blue: {
-                wrapperBackground: "#5F64D3",
-                headerBackground: "#26175A",
+                wrapperBackground: "#E0FFFF",
+                headerBackground: "#87CEFA",
                 headerColor: "white",
                 photoBorderColor: "#73448C"
             },
             pink: {
-                wrapperBackground: "#879CDF",
-                headerBackground: "#FF8374",
+                wrapperBackground: "#FFF0F5",
+                headerBackground: "#FFB6C1",
                 headerColor: "white",
                 photoBorderColor: "#FEE24C"
             },
             red: {
-                wrapperBackground: "#DE9967",
-                headerBackground: "#870603",
+                wrapperBackground: "#800000",
+                headerBackground: "#DB7093",
                 headerColor: "white",
                 photoBorderColor: "white"
             }
@@ -182,7 +182,7 @@ inquirer
                             }
                             @media print { 
                                 body { 
-                                    zoom: .75; 
+                                    zoom: .50; 
                                 } 
                             }
                         </style>
@@ -197,7 +197,7 @@ inquirer
                                     <div class="my-3 text-center">
                                         <h6>Currently at ${company}</h6>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-2">
                                         <div class="col text-right">
                                             <a href="http://maps.google.com/maps?q=${location.split(' ').join('+')}"><i class="fas fa-location-arrow"></i>${location}</a>
                                         </div>
@@ -205,57 +205,58 @@ inquirer
                                             <a href="${html_url}"><i class="fab fa-github"></i> GitHub</a>
                                         </div>
                                         <div class="col text-left">
-                                            <a href="${blog}"><i class="fas fa-blog"></i>Blog</a>
+                                            <a href="${blog}"><i class="fas fa-paperclip"></i>Blog</a>
+                                            </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="main">
-                                <div>
-                                    <h4 style="text-align: center;">${bio}</h4>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <h4>Public Respositories</h4>
-                                            <h6>${public_repos}</h6>
+                                    <div class="main pt-5 pb-1 px-3 mb-0">
+                                        <div>
+                                            <h4 style="text-align: center;">${bio}</h4>
                                         </div>
-                                    </div>    
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <h4>Followers</h4>
-                                            <h6>${followers}</h6>
+                                        <div class="row mt-4">
+                                            <div class="col-6">
+                                                <div class="card m-0">
+                                                    <h4 class="mb-2">Public Respositories <i class="far fa-sticky-note"></i></h4>
+                                                    <h6>${public_repos}</h6>
+                                                </div>
+                                            </div>    
+                                            <div class="col-6">
+                                                <div class="card m-0">
+                                                    <h4 class="mb-2">Followers <i class="fas fa-user-friends"></i></h4>
+                                                    <h6>${followers}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4 mb-5">
+                                            <div class="col-6">
+                                                <div class="card m-0">
+                                                    <h4 class="mb-2">GitHub Stars <i class="far fa-star"></i></h4>
+                                                    <h6>${public_gists}</h6>
+                                                </div>
+                                            </div>    
+                                            <div class="col-6">
+                                                <div class="card m-0">
+                                                    <h4 class="mb-2">Following <i class="fas fa-user-friends"></i></h4>
+                                                    <h6>${following}</h6>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <h4>GitHub Stars</h4>
-                                            <h6>${public_gists}</h6>
-                                        </div>
-                                    </div>    
-                                    <div class="col-6">
-                                        <div class="card">
-                                            <h4">Following</h4>
-                                            <h6>${following}</h6>
-                                        </div>
+                                    <div class="bottom">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="bottom">
-                            </div>
-                        </div>
                     </body>
                     </html>`
                 ;
 
-                var options = { format: 'Letter'};
+                var format = { format: 'Letter' };
 
                 // creating an HTML / PDF document 
-                pdf.create(html, options).toFile(`./html-pdf/${login}.pdf`, function(err, res) {
+                pdf.create(html, format).toFile(`./html-pdf/${login}.pdf`, function(err, res) {
                     if (err) return console.log(err);
                     console.log('EUREKA!');
+                    console.log(res);
                 });
 
             });
