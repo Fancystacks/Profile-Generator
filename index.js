@@ -3,10 +3,6 @@ const axios = require('axios');
 const inquirer = require('inquirer');
 const pdf = require('html-pdf');
 
-const axios = require("axios");
-const inquirer = require("inquirer");
-const pdf = require("html-pdf");
-
 const questions = [
     {
         type: "input"
