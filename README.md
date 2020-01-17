@@ -9,12 +9,13 @@
 
       - Enter GitHub username
 
-      - Down-key to select desired color
+      - Down-key to select desired profile color
 
-      - File directory will apper
+      - File directory will appear with a success message 
 
-- The program will print a .PDF file with the input information
+#### The program will print a saved .PDF file with the input information
+- File will be saved in 'html-pdf' folder
 
-*Profiles containing images work most efficiently in the .PDF*
+*(Profiles containing images work most efficiently in the .PDF)*
 
 #### This site was created and deployed on [GitHub Pages](https://github.com/Fancystacks/Profile-Generator/).
