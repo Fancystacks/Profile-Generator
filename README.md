@@ -4,6 +4,8 @@
 ![Node experiment](https://user-images.githubusercontent.com/38336934/72587979-1cff8d00-38b4-11ea-840c-e772d192e6c5.gif)
 
 ### Download Profile-Generator,
+- Download files and npm dependencies
+
 - Type node index.js in the command line for prompt
     - Answer the input prompt
 
