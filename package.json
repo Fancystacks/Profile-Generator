@@ -4,7 +4,7 @@
   "description": "## Instructions: ![Node experiment](https://user-images.githubusercontent.com/38336934/72587979-1cff8d00-38b4-11ea-840c-e772d192e6c5.gif)",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "html-pdf": "^2.2.0",
     "inquirer": "^7.0.3"
   },
